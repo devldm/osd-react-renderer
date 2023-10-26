@@ -17,10 +17,10 @@ import {
   RADIUS_UM,
 } from '../const'
 import { useCallback, useRef } from 'react'
-import Viewport from '../components/Viewport'
 import OpenSeadragon from 'openseadragon'
 import { useAtom } from 'jotai'
 import { scaleFactorAtom, viewportZoomAtom } from '../App'
+import Viewport from '../components/Viewport'
 
 const onTooltipOverlayRedraw: NonNullable<TooltipOverlayProps['onRedraw']> = ({
   tooltipCoord,
@@ -86,7 +86,6 @@ export default function Home() {
           backgroundColor={'rgba(255,255,255,0.5)'}
           location={ScalebarLocation.BOTTOM_RIGHT}
         />
-        s
         <CanvasOverlay redrawFn={onCanvasOverlayRedraw} />
         <tooltipOverlay onRedraw={onTooltipOverlayRedraw} />
         <MouseTracker osdViewerRef={osdViewerRef} />

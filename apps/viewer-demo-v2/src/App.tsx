@@ -1,6 +1,5 @@
 import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom'
 import styled from 'styled-components'
-import { ErrorBoundary } from 'react-error-boundary'
 
 import TestPage from './pages/Test'
 import SvgPage from './pages/Svg'
@@ -73,7 +72,7 @@ const Links = styled.div`
 export const scaleFactorAtom = atom(1)
 export const viewportZoomAtom = atom(1)
 
-function App(this: any) {
+function App() {
   return (
     <BrowserRouter>
       <Container>
@@ -100,9 +99,7 @@ function App(this: any) {
               <WebglPage />
             </Route>
             <Route exact path="/svg">
-              <ErrorBoundary fallback={<div>error boundary test</div>}>
-                <SvgPage />
-              </ErrorBoundary>
+              <SvgPage />
             </Route>
             <Route exact path="/">
               <Home />
