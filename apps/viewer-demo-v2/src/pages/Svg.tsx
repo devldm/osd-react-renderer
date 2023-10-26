@@ -20,7 +20,13 @@ export default function SvgPage() {
 
   return (
     <>
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          width: 'max-content',
+        }}
+      >
         <button onClick={setSVGAllVisible}>svg visible</button>
         <button onClick={() => setSVGSubVisibility(0)}>svg sub 1</button>
         <button onClick={() => setSVGSubVisibility(1)}>svg sub 2</button>
